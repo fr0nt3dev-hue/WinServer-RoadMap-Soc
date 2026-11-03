@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080f1d">
+<meta name="description" content="خارطة طريق تفاعلية لبداية محلل عمليات الأمن السيبراني SOC، مع فلترة دروس Windows Server وMCSA.">
+<title>خارطة SOC | مسار الأمن السيبراني</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="brand-mark">S<span>O</span>C</span><span><strong>خارطة SOC</strong><small>SECURITY OPERATIONS ROADMAP</small></span></a>
+  <button class="mobile-menu" id="mobileMenu" type="button">القائمة</button>
+  <nav class="main-nav" id="mainNav">
+    <button class="nav-link active" data-tab="overview" type="button">نظرة عامة</button>
+    <button class="nav-link" data-tab="roadmap" type="button">المسار الدراسي</button>
+    <button class="nav-link" data-tab="library" type="button">مكتبة الدروس <span class="nav-count" id="navCount">188</span></button>
+    <button class="nav-link" data-tab="ccnp" type="button">CCNP والشبكات</button>
+    <button class="nav-link" data-tab="resources" type="button">مصادر SOC</button>
+  </nav>
+</header>
+<main class="shell" id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="pulse"></span> CYBERSECURITY · SOC ANALYST L1</span>
+      <h1>من أساسيات الشبكات إلى <em>SOC Analyst</em></h1>
+      <p>خارطة عربية عملية لترتيب دروس Windows Server وMCSA، واختيار ما يخدم بداية مسار مركز العمليات الأمنية دون تكرار أو تشتت.</p>
+      <div class="hero-actions"><button class="btn btn-primary" data-goto="roadmap" type="button">ابدأ المسار الدراسي</button><button class="btn btn-ghost" data-goto="library" type="button">استكشف مكتبة الدروس</button></div>
+      <div class="hero-note"><span class="note-icon">✦</span> اختر درسًا أساسيًا واحدًا، واستخدم النسخ الأخرى كبدائل عند الحاجة.</div>
+    </div>
+    <div class="hero-visual" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="shield"><div class="shield-inner"><span class="shield-eye">◈</span><strong>SOC</strong><small>DEFEND · DETECT</small></div></div><div class="floating-chip chip-top">NETWORK <b>01</b></div><div class="floating-chip chip-side">WINDOWS <b>02</b></div><div class="floating-chip chip-bottom">SIEM <b>03</b></div></div>
+  </section>
+  <section class="metrics" id="metrics"></section>
+  <section class="progress-panel"><div class="progress-top"><div><span class="section-kicker">YOUR PROGRESS</span><h2>تقدمك في المسار الأساسي</h2></div><div class="progress-value"><strong id="progressPercent">0%</strong><span id="progressText">0 من 0 درسًا أساسيًا</span></div></div><div class="progress-track"><span id="progressBar"></span></div><div class="progress-bottom"><span>يتم حفظ العلامات على هذا المتصفح</span><button class="text-button" id="resetProgress" type="button">إعادة ضبط التقدم</button></div></section>
+  <section class="tab-panel active" id="panel-overview"></section>
+  <section class="tab-panel" id="panel-roadmap"></section>
+  <section class="tab-panel" id="panel-library"><div class="section-head"><div><span class="section-label">VIDEO LIBRARY / 03</span><h2>مكتبة جميع الدروس</h2><p>ابحث وصنّف حسب الكورس والمدرب والأولوية.</p></div><button class="btn btn-ghost" id="exportCsv" type="button">تصدير CSV</button></div><div class="library-toolbar"><div class="field"><label for="searchInput">بحث باسم الدرس أو المدرب</label><input id="searchInput" type="search" placeholder="مثال: Active Directory"></div><div class="field"><label for="priorityFilter">الأولوية</label><select id="priorityFilter"><option value="all">كل الأولويات</option><option value="important">مهم</option><option value="medium">متوسط</option><option value="later">فيما بعد</option><option value="irrelevant">غير مهم</option></select></div><div class="field"><label for="sourceFilter">الكورس</label><select id="sourceFilter"><option value="all">كل القوائم</option><option value="ws19">Windows Server 2019</option><option value="ws22">Windows Server 2022</option><option value="mcsa">MCSA Core</option></select></div><div class="field"><label for="doneFilter">حالة المشاهدة</label><select id="doneFilter"><option value="all">الكل</option><option value="done">تمت المشاهدة</option><option value="todo">لم تشاهد</option></select></div><label class="filter-check"><input id="routeOnly" type="checkbox"> دروس المسار الأساسي فقط</label></div><div class="library-summary"><span id="libraryCount">188 درسًا</span><span>188 عنوانًا من 3 قوائم</span></div><div class="video-grid" id="videoGrid"></div></section>
+  <section class="tab-panel" id="panel-ccnp"></section>
+  <section class="tab-panel" id="panel-resources"></section>
+  <footer class="footer"><div class="footer-brand"><span class="brand-mark">S<span>O</span>C</span><strong>خارطة SOC</strong></div><p>خطة تعلم مستقلة مبنية على عناوين القوائم المرفقة، مع مصادر إضافية لاستكمال مهارات SOC.</p><div class="footer-meta"><span>LEARN · PRACTICE · ANALYZE</span><span>VERSION 1.1</span></div></footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+
+<div id="boot" style="position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#080f1d;color:#dbeafe;font:700 15px system-ui">جارٍ تحميل خارطة SOC…</div>
+<script>
+(async () => {
+  const boot = document.getElementById('boot');
+  const unpack = async (path) => {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error('تعذر تحميل ' + path + ' (' + response.status + ')');
+    const encoded = (await response.text()).trim();
+    const bytes = Uint8Array.from(atob(encoded), c => c.charCodeAt(0));
+    return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+  };
+  try {
+    const [css, data, app] = await Promise.all([
+      unpack('./styles.css.gz.b64'), unpack('./data.js.gz.b64'), unpack('./app.js.gz.b64')
+    ]);
+    const style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
+    const dataScript = document.createElement('script'); dataScript.textContent = data; document.body.appendChild(dataScript);
+    const appScript = document.createElement('script'); appScript.textContent = app; document.body.appendChild(appScript);
+    boot.remove();
+  } catch (error) { boot.textContent = 'تعذر تحميل الموقع: ' + (error.message || error); }
+})();
+</script>
+</body>
+</html>
